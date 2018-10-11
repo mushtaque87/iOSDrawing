@@ -14,7 +14,7 @@
 		509D3285216E28D7000BF915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509D3283216E28D7000BF915 /* LaunchScreen.storyboard */; };
 		509D3290216E28D7000BF915 /* DrawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D328F216E28D7000BF915 /* DrawingTests.swift */; };
 		509D329B216E28D7000BF915 /* DrawingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D329A216E28D7000BF915 /* DrawingUITests.swift */; };
-		509D32A9216F5164000BF915 /* Screen Shot 2018-10-11 at 1.34.03 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D32A8216F5163000BF915 /* Screen Shot 2018-10-11 at 1.34.03 PM.png */; };
+		509D32A9216F5164000BF915 /* ScreenShot.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D32A8216F5163000BF915 /* ScreenShot.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		509D3296216E28D7000BF915 /* DrawingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		509D329A216E28D7000BF915 /* DrawingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUITests.swift; sourceTree = "<group>"; };
 		509D329C216E28D7000BF915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		509D32A8216F5163000BF915 /* Screen Shot 2018-10-11 at 1.34.03 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2018-10-11 at 1.34.03 PM.png"; sourceTree = "<group>"; };
+		509D32A8216F5163000BF915 /* ScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 				509D3281216E28D7000BF915 /* Assets.xcassets */,
 				509D3283216E28D7000BF915 /* LaunchScreen.storyboard */,
 				509D3286216E28D7000BF915 /* Info.plist */,
-				509D32A8216F5163000BF915 /* Screen Shot 2018-10-11 at 1.34.03 PM.png */,
+				509D32A8216F5163000BF915 /* ScreenShot.png */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 			files = (
 				509D3285216E28D7000BF915 /* LaunchScreen.storyboard in Resources */,
 				509D3282216E28D7000BF915 /* Assets.xcassets in Resources */,
-				509D32A9216F5164000BF915 /* Screen Shot 2018-10-11 at 1.34.03 PM.png in Resources */,
+				509D32A9216F5164000BF915 /* ScreenShot.png in Resources */,
 				509D3280216E28D3000BF915 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
