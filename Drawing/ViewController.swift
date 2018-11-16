@@ -17,17 +17,18 @@ struct PhonemePoints {
 }
 
 class ViewController: UIViewController {
-
-    let alignedOriginalPhoneme = ["HH","_","_","AH","L","OW"]
-    let originalPhoneme = ["",""]
+    let alignedOriginalPhoneme = ["T","AY","P"]
+    //let alignedOriginalPhoneme = ["HH","_","_","AH","L","OW"]
+    //let originalPhoneme = ["",""]
     
-    let alignedPredictedPhoenems = ["HH","EH","T","AH","L","D"]
-    let predictedPhonemes = ["",""]
+    let alignedPredictedPhoenems = ["_","AY","_"]
+   // let alignedPredictedPhoenems = ["HH","EH","T","AH","L","D"]
+    //let predictedPhonemes = ["",""]
     
     var phonemeDetailsArray = Array<PhonemePoints>()
     @IBOutlet var scrollView : UIScrollView!
     
-    var orignialPhonemeLabelArray = Array<UILabel>()
+    //var orignialPhonemeLabelArray = Array<UILabel>()
     //var pred
     
     override func viewDidLoad() {
@@ -60,20 +61,23 @@ class ViewController: UIViewController {
  */
     func prepareOriginalPhonemeDetailArray() {
         for (count,char) in alignedOriginalPhoneme.enumerated() {
-            if (char != "_" && char == alignedPredictedPhoenems[count]) {
-                let phonemepoints = PhonemePoints(phoneme: char, position: count, ismatched: true, startLabel: nil , endLabel: nil)
+            if (char != "_") {
+                
+                let phonemepoints = PhonemePoints(phoneme: char, position: count, ismatched: (char == alignedPredictedPhoenems[count] ? true:false) , startLabel: nil , endLabel: nil)
              phonemeDetailsArray.append(phonemepoints)
+            } else {
+                
             }
         }
     }
     
     func drawOriginalPhonemeLables() {
         for (count,phoneme) in phonemeDetailsArray.enumerated() {
-        let label = UILabel(frame: CGRect(x: 50, y: 50 * count, width: 50, height: 50))
+        let label = UILabel(frame: CGRect(x: 10, y: 70 * count + 5, width: 60, height: 60))
         //label.center = CGPointMake(160, 284)
         label.textAlignment = .center
         label.text = phoneme.phoneme
-        label.layer.borderColor = UIColor.green.cgColor
+        label.layer.borderColor = UIColor(red: 60.0/255.0, green: 179.0/255.0, blue: 113.0/255.0, alpha: 1).cgColor
             label.layer.borderWidth =  5
             label.layer.cornerRadius = label.frame.size.height / 2
         scrollView.addSubview(label)
@@ -87,11 +91,11 @@ class ViewController: UIViewController {
     
     func drawAlignedPredictedPhonemeLables() {
         for (count,phoneme) in alignedPredictedPhoenems.enumerated() {
-            let label = UILabel(frame: CGRect(x: 200, y: 50 * count, width: 50, height: 50))
+            let label = UILabel(frame: CGRect(x: Int(self.view.frame.size.width) - 100, y: 70 * count + 5, width: 60, height: 60))
             //label.center = CGPointMake(160, 284)
             label.textAlignment = .center
             label.text = phoneme
-            label.layer.borderColor = UIColor.black.cgColor
+            label.layer.borderColor = UIColor.red.cgColor
             label.layer.borderWidth =  5
             label.layer.cornerRadius = label.frame.size.height / 2
             updateOriginalPhonemeArray(for: count, with: label)
@@ -105,7 +109,7 @@ class ViewController: UIViewController {
                 let phonemepoints = PhonemePoints(phoneme: phoneme.phoneme, position: phoneme.position, ismatched: phoneme.ismatched, startLabel: phoneme.startLabel, endLabel: label)
                // phonemeDetailsArray.remove(at: count)
            // phonemeDetailsArray.insert(phonemepoints, at: count)
-                label.layer.borderColor = UIColor.green.cgColor
+                label.layer.borderColor = UIColor(red: 60.0/255.0, green: 179.0/255.0, blue: 113.0/255.0, alpha: 1).cgColor
                  phonemeDetailsArray[count] = phonemepoints
             }
         }
@@ -115,8 +119,8 @@ class ViewController: UIViewController {
         for count in 1...alignedOriginalPhoneme.count {
             let line = CAShapeLayer()
             let linePath = UIBezierPath()
-            linePath.move(to: CGPoint(x: 50, y: 50 * count))
-            linePath.addLine(to: CGPoint(x: Int(self.view.frame.size.width) - 50, y: 50 * count))
+            linePath.move(to: CGPoint(x: 0, y: 70 * count))
+            linePath.addLine(to: CGPoint(x: Int(self.view.frame.size.width) , y: 70 * count))
             line.path = linePath.cgPath
             line.strokeColor = UIColor.lightGray.cgColor
             line.lineWidth = 1
@@ -127,6 +131,7 @@ class ViewController: UIViewController {
     
     func connectLines() {
          for (count,phoneme) in phonemeDetailsArray.enumerated() {
+            if(phoneme.ismatched == true) {
             let line = CAShapeLayer()
             let linePath = UIBezierPath()
             //linePath.move(to: CGPoint(x: (phoneme.startLabel?.frame.origin.x)!, y: (phoneme.startLabel?.frame.origin.y)!))
@@ -135,16 +140,18 @@ class ViewController: UIViewController {
             print("X: \(phoneme.startLabel?.frame.origin.x)")
             print("Y: \(phoneme.startLabel?.frame.origin.y)")
             line.path = linePath.cgPath
-            if(count == 0) {
-            line.strokeColor = UIColor.green.cgColor
-            } else if(count == 1) {
-                line.strokeColor = UIColor.green.cgColor
-            } else {
-                line.strokeColor = UIColor.green.cgColor
-            }
+            line.strokeColor = UIColor(red: 60.0/255.0, green: 179.0/255.0, blue: 113.0/255.0, alpha: 1).cgColor
+//            if(count == 0) {
+//            line.strokeColor = UIColor.green.cgColor
+//            } else if(count == 1) {
+//                line.strokeColor = UIColor.green.cgColor
+//            } else {
+//                line.strokeColor = UIColor.green.cgColor
+//            }
             line.lineWidth = 5
             line.lineJoin = kCALineCapButt
             scrollView.layer.addSublayer(line)
+            }
         }
     }
     
@@ -154,6 +161,10 @@ class ViewController: UIViewController {
         return (labelEndPoint + label.frame.size.height)/2
     }
     
+    @IBAction func showUI1(){
+        let ui1Screen = ScoreBarsTableViewController(nibName: "ScoreBarsTableViewController", bundle: nil, for: [20,40,80,100,20,40,80,100,70,100,10,70,100,10,0,50,20,40,80,100,20,40,80,100,70,100,10,70,100,10,0,50])
+        present(ui1Screen, animated: true, completion: nil)
+    }
     /*
     func lineEndPoint(to label:UILabel) -> CGFloat {
         

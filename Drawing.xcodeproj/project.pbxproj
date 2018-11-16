@@ -15,6 +15,10 @@
 		509D3290216E28D7000BF915 /* DrawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D328F216E28D7000BF915 /* DrawingTests.swift */; };
 		509D329B216E28D7000BF915 /* DrawingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D329A216E28D7000BF915 /* DrawingUITests.swift */; };
 		509D32A9216F5164000BF915 /* ScreenShot.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D32A8216F5163000BF915 /* ScreenShot.png */; };
+		50E69D4D219C4EF600AD352E /* ScoreBarsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E69D4B219C4EF600AD352E /* ScoreBarsTableViewController.swift */; };
+		50E69D4E219C4EF600AD352E /* ScoreBarsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E69D4C219C4EF600AD352E /* ScoreBarsTableViewController.xib */; };
+		50E69D53219C520400AD352E /* ScoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E69D51219C520400AD352E /* ScoresTableViewCell.swift */; };
+		50E69D54219C520400AD352E /* ScoresTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E69D52219C520400AD352E /* ScoresTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		509D329A216E28D7000BF915 /* DrawingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUITests.swift; sourceTree = "<group>"; };
 		509D329C216E28D7000BF915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		509D32A8216F5163000BF915 /* ScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot.png; sourceTree = "<group>"; };
+		50E69D4B219C4EF600AD352E /* ScoreBarsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBarsTableViewController.swift; sourceTree = "<group>"; };
+		50E69D4C219C4EF600AD352E /* ScoreBarsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreBarsTableViewController.xib; sourceTree = "<group>"; };
+		50E69D51219C520400AD352E /* ScoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresTableViewCell.swift; sourceTree = "<group>"; };
+		50E69D52219C520400AD352E /* ScoresTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoresTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,10 @@
 				509D3283216E28D7000BF915 /* LaunchScreen.storyboard */,
 				509D3286216E28D7000BF915 /* Info.plist */,
 				509D32A8216F5163000BF915 /* ScreenShot.png */,
+				50E69D4B219C4EF600AD352E /* ScoreBarsTableViewController.swift */,
+				50E69D4C219C4EF600AD352E /* ScoreBarsTableViewController.xib */,
+				50E69D51219C520400AD352E /* ScoresTableViewCell.swift */,
+				50E69D52219C520400AD352E /* ScoresTableViewCell.xib */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -234,6 +246,8 @@
 			files = (
 				509D3285216E28D7000BF915 /* LaunchScreen.storyboard in Resources */,
 				509D3282216E28D7000BF915 /* Assets.xcassets in Resources */,
+				50E69D54219C520400AD352E /* ScoresTableViewCell.xib in Resources */,
+				50E69D4E219C4EF600AD352E /* ScoreBarsTableViewController.xib in Resources */,
 				509D32A9216F5164000BF915 /* ScreenShot.png in Resources */,
 				509D3280216E28D3000BF915 /* Main.storyboard in Resources */,
 			);
@@ -260,7 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E69D4D219C4EF600AD352E /* ScoreBarsTableViewController.swift in Sources */,
 				509D327D216E28D3000BF915 /* ViewController.swift in Sources */,
+				50E69D53219C520400AD352E /* ScoresTableViewCell.swift in Sources */,
 				509D327B216E28D3000BF915 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +453,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C6UNXYYV66;
 				INFOPLIST_FILE = Drawing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C6UNXYYV66;
 				INFOPLIST_FILE = Drawing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
